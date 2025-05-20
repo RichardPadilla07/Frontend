@@ -1,5 +1,5 @@
-import axios from 'axios'
-import { toast } from 'react-toastify'
+import axios from 'axios' // Axios es una librería para hacer peticiones HTTP
+import { toast } from 'react-toastify' // Librería para mostrar notificaciones
 
 function useFetch() {
 
@@ -17,7 +17,7 @@ function useFetch() {
             
         } catch (error) {
             toast.error(error.response?.data?.msg)
-            const errorMsg = error.response?.data?.msg || 'Error desconocido';
+            const errorMsg = error.response?.data?.msg || 'An error occurred';
             throw new Error(errorMsg);
         }
     }
