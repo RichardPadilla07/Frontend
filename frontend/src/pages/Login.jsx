@@ -3,31 +3,61 @@ import { Link } from 'react-router';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const [rememberMe, setRememberMe] = useState(false);
 
+    const handleCheckboxChange = () => {
+        setRememberMe(!rememberMe);
+        // Aquí puedes guardar en localStorage si deseas mantener sesión:
+        // localStorage.setItem("rememberMe", !rememberMe);
+    };
 
     return (
         <div className="flex flex-col sm:flex-row h-screen">
+
             {/* Imagen de fondo */}
-            <div className="w-full sm:w-1/2 h-1/3 sm:h-screen bg-[url('/public/images/doglogin.jpg')] 
+            <div className="w-full sm:w-1/2 h-1/3 sm:h-screen bg-[url('/public/images/epnLogin.jpeg')] 
             bg-no-repeat bg-cover bg-center sm:block hidden">
             </div>
 
             {/* Contenedor de formulario */}
             <div className="w-full sm:w-1/2 h-screen bg-white flex justify-center items-center">
                 <div className="md:w-4/5 sm:w-full">
-                    <h1 className="text-3xl font-semibold mb-2 text-center uppercase text-gray-500">Bienvenido(a) de nuevo</h1>
-                    <small className="text-gray-400 block my-4 text-sm">Por favor ingresa tus datos</small>
+
+            {/* Logo encima del título */}
+                <div className="flex justify-center mt-0 mb-9">
+                    <img 
+                        src="/public/images/logo_esfot_buho.png"
+                        alt="Logo"
+                        className="w-24 h-24 object-contain"
+                    />
+                </div>
+
+                {/* Título de bienvenida */}
+                <h1 className="text-3xl font-semibold mb-2 text-center uppercase text-black">BIENVENIDOS</h1>
+
+                {/* Botón de inicio de sesión con Google */}
+                <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-base hover:scale-105 duration-300 hover:bg-black hover:text-white">
+                    <img className="w-5 mr-2" src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google icon" />
+                    Sign in with Google
+                </button>
+
+                <div className="flex items-center my-10">
+                        <hr className="flex-grow border-gray-400" />
+                            <span className="mx-2 text-gray-400 text-base whitespace-nowrap">OR LOGIN WITH EMAIL</span>
+                        <hr className="flex-grow border-gray-400" />
+                    </div>
 
                     <form>
+
                         {/* Correo electrónico */}
                         <div className="mb-3">
-                            <label className="mb-2 block text-sm font-semibold">Correo electrónico</label>
+                            <label className="mb-2 block text-base font-semibold">Correo electrónico</label>
                             <input type="email" placeholder="Ingresa tu correo" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-2 text-gray-500" />
                         </div>
 
                         {/* Contraseña */}
-                        <div className="mb-3 relative">
-                            <label className="mb-2 block text-sm font-semibold">Contraseña</label>
+                        <div className="mb-6 relative">
+                            <label className="mb-2 block text-base font-semibold">Contraseña</label>
                             <div className="relative">
                                 <input
                                     type={showPassword ? "text" : "password"}
@@ -51,35 +81,46 @@ const Login = () => {
                                 </button>
                             </div>
                         </div>
-
-                        {/* Botón de iniciar sesión */}
-                        <div className="my-4">
-                            <Link to="/dashboard" className="py-2 w-full block text-center bg-gray-500 text-slate-300 border rounded-xl hover:scale-100 duration-300 hover:bg-gray-900 hover:text-white">Iniciar sesión</Link>
-                        </div>
                     </form>
 
-                    {/* Separador con opción de "O" */}
-                    <div className="mt-6 grid grid-cols-3 items-center text-gray-400">
-                        <hr className="border-gray-400" />
-                        <p className="text-center text-sm">O</p>
-                        <hr className="border-gray-400" />
+                    {/* Recordarme y Olvidaste tu contraseña */}
+                    <div className="mb-7 flex justify-between items-center">
+                        <div className="flex items-center">
+                            <input
+                                id="rememberMe"
+                                type="checkbox"
+                                onChange={handleCheckboxChange}
+                                className="mr-2"
+                            />
+                            <label htmlFor="rememberMe" className="text-base text-gray-500">Recordarme</label>
+                        </div>
+                        <Link
+                            to="/forgot/id"
+                            className="underline text-base text-gray-400 hover:text-gray-900"
+                        >
+                            ¿Olvidaste tu contraseña?
+                        </Link>
                     </div>
 
-                    {/* Botón de inicio de sesión con Google */}
-                    <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-black hover:text-white">
-                        <img className="w-5 mr-2" src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google icon" />
-                        Sign in with Google
-                    </button>
-
-                    {/* Olvidaste tu contraseña */}
-                    <div className="mt-5 text-xs border-b-2 py-4">
-                        <Link to="/forgot/id" className="underline text-sm text-gray-400 hover:text-gray-900">¿Olvidaste tu contraseña?</Link>
+                    {/* Botón de iniciar sesión */}
+                    <div className="my-4">
+                        <Link
+                            to="/dashboard"
+                            className="py-2 w-full block text-center bg-black text-white rounded-xl hover:bg-blue-600 duration-300"
+                    >
+                        Iniciar sesión
+                        </Link>
                     </div>
 
-                    {/* Enlaces para volver o registrarse */}
-                    <div className="mt-3 text-sm flex justify-between items-center">
-                        <Link to="/" className="underline text-sm text-gray-400 hover:text-gray-900">Regresar</Link>
-                        <Link to="/register" className="py-2 px-5 bg-gray-600 text-slate-300 border rounded-xl hover:scale-110 duration-300 hover:bg-gray-900 hover:text-white">Registrarse</Link>
+                        {/* Registrarse */}
+                    <div className="mt-4 text-base py-4 text-center text-gray-500">
+                        ¿No tienes cuenta?{' '}
+                        <Link 
+                            to="/register" 
+                            className="text-base text-gray-500 underline hover:text-black font-medium"
+                        >
+                            Regístrate aquí
+                        </Link>
                     </div>
                 </div>
             </div>
