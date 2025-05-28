@@ -33,14 +33,14 @@ export const Register = () => {
                 <div className="md:w-4/5 sm:w-full">
                     {/* Contenedor del formulario */}
 
-                    <h1 className="text-3xl font-semibold mb-2 text-center uppercase text-gray-500">Bienvenido(a)</h1>
-                    <small className="text-gray-400 block my-4 text-sm">Por favor ingresa tus datos</small> 
+                    <h1 className="text-3xl font-semibold mb-2 text-center uppercase text-black">BIENVENIDOS</h1>
+                    <small className="text-gray-400 block my-4 text-base">Por favor ingresa tus datos</small> 
                     
                     <form onSubmit={handleSubmit(registro)}>
 
                         {/* Campo para nombre */}
                         <div className="mb-3">
-                            <label className="mb-2 block text-sm font-semibold">Nombre</label>
+                            <label className="mb-2 block text-base font-semibold">Nombre</label>
                             <input type="text" placeholder="Ingresa tu nombre" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" 
                             {...register("nombre", { required: "Este campo es obligatorio!" })}
                             />
@@ -49,7 +49,7 @@ export const Register = () => {
 
                         {/* Campo para apellido */}
                         <div className="mb-3">
-                            <label className="mb-2 block text-sm font-semibold">Apellido</label>
+                            <label className="mb-2 block text-base font-semibold">Apellido</label>
                             <input type="text" placeholder="Ingresa tu apellido" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" 
                             {...register("apellido", { required: "Este campo es obligatorio!" })}
                             />
@@ -58,7 +58,7 @@ export const Register = () => {
 
                         {/* aqui deberia ir direccion */}  
                         <div className="mb-3">
-                            <label className="mb-2 block text-sm font-semibold">Dirección</label>
+                            <label className="mb-2 block text-base font-semibold">Dirección</label>
                             <input type="text" placeholder="Ingresa tu dirección" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" 
                             {...register("direccion", { required: "Este campo es obligatorio!" })}
                             />
@@ -67,7 +67,7 @@ export const Register = () => {
 
                         {/* Campo para celular */}
                         <div className="mb-3">
-                            <label className="mb-2 block text-sm font-semibold">Celular</label>
+                            <label className="mb-2 block text-base font-semibold">Celular</label>
                             <input type="number" placeholder="Ingresa tu celular" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" 
                             {...register("celular", { required: "Este campo es obligatorio!" })}
                             />
@@ -76,7 +76,7 @@ export const Register = () => {
 
                         {/* Campo para correo electrónico */}
                         <div className="mb-3">
-                            <label className="mb-2 block text-sm font-semibold">Correo electrónico</label>
+                            <label className="mb-2 block text-base font-semibold">Correo electrónico</label>
                             <input type="email" placeholder="Ingresa tu correo electrónico" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" 
                             {...register("correo", { required: "Este campo es obligatorio!" })}
                             />
@@ -85,7 +85,7 @@ export const Register = () => {
 
                         {/* Campo para contraseña */}
                         <div className="mb-3 relative">
-                            <label className="mb-2 block text-sm font-semibold">Contraseña</label>
+                            <label className="mb-2 block text-base font-semibold">Contraseña</label>
                             <div className="relative">
                                 <input
                                     type={showPassword ? "text" : "password"} // Cambia el tipo del input entre 'text' y 'password' según el estado
@@ -122,7 +122,7 @@ export const Register = () => {
                     </form>
 
                     {/* Enlace para iniciar sesión si ya tiene una cuenta */}
-                    <div className="mt-3 text-sm flex justify-between items-center">
+                    <div className="mt-3 text-base flex justify-between items-center">
                         <p>¿Ya posees una cuenta?</p>
                         <Link to="/login" className="py-2 px-5 bg-gray-500 text-slate-300 border rounded-xl hover:scale-110 duration-300 hover:bg-gray-900">Iniciar sesión</Link>
                     </div>
