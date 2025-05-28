@@ -106,7 +106,7 @@ const Login = () => {
                     <div className="my-4">
                         <Link
                             to="/dashboard"
-                            className="py-2 w-full block text-center bg-black text-white rounded-xl hover:bg-blue-600 duration-300"
+                            className="py-2 w-full block text-center bg-black text-white hover:scale-105 rounded-xl hover:bg-blue-600 duration-300"
                     >
                         Iniciar sesión
                         </Link>
