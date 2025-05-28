@@ -42,16 +42,16 @@ export const Register = () => {
                         <div className="mb-3">
                             <label className="mb-2 block text-sm font-semibold">Nombre</label>
                             <input type="text" placeholder="Ingresa tu nombre" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" 
-                            {...register("nombre", { required: "Este campo es obligatorio" })}
+                            {...register("nombre", { required: "Este campo es obligatorio!" })}
                             />
-                            {errors.nombre && <p className="text-red-500 text-xs">{errors.nombre.message}</p>}
+                            {errors.nombre && <p className="text-red-800">{errors.nombre.message}</p>}
                         </div>
 
                         {/* Campo para apellido */}
                         <div className="mb-3">
                             <label className="mb-2 block text-sm font-semibold">Apellido</label>
                             <input type="text" placeholder="Ingresa tu apellido" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" 
-                            {...register("apellido", { required: "Este campo es obligatorio" })}
+                            {...register("apellido", { required: "Este campo es obligatorio!" })}
                             />
                             {errors.apellido && <p className="text-red-800">{errors.apellido.message}</p>}
                         </div>
@@ -60,7 +60,7 @@ export const Register = () => {
                         <div className="mb-3">
                             <label className="mb-2 block text-sm font-semibold">Dirección</label>
                             <input type="text" placeholder="Ingresa tu dirección" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" 
-                            {...register("direccion", { required: "Este campo es obligatorio" })}
+                            {...register("direccion", { required: "Este campo es obligatorio!" })}
                             />
                             {errors.direccion && <p className="text-red-800">{errors.direccion.message}</p>}
                         </div>
@@ -69,7 +69,7 @@ export const Register = () => {
                         <div className="mb-3">
                             <label className="mb-2 block text-sm font-semibold">Celular</label>
                             <input type="number" placeholder="Ingresa tu celular" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" 
-                            {...register("celular", { required: "Este campo es obligatorio" })}
+                            {...register("celular", { required: "Este campo es obligatorio!" })}
                             />
                             {errors.celular && <p className="text-red-800">{errors.celular.message}</p>}
                         </div>
@@ -78,7 +78,7 @@ export const Register = () => {
                         <div className="mb-3">
                             <label className="mb-2 block text-sm font-semibold">Correo electrónico</label>
                             <input type="email" placeholder="Ingresa tu correo electrónico" className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" 
-                            {...register("correo", { required: "Este campo es obligatorio" })}
+                            {...register("correo", { required: "Este campo es obligatorio!" })}
                             />
                             {errors.correo && <p className="text-red-800">{errors.correo.message}</p>}
                         </div>
@@ -91,7 +91,7 @@ export const Register = () => {
                                     type={showPassword ? "text" : "password"} // Cambia el tipo del input entre 'text' y 'password' según el estado
                                     placeholder="********************"
                                     className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500 pr-10"
-                                    {...register("password", { required: "La contraseña es obligatorio" })}
+                                    {...register("password", { required: "Este campo es obligatorio!" })}
                                 />
                                     {errors.password && <p className="text-red-800">{errors.password.message}</p>}
                                 {/* Botón para mostrar/ocultar la contraseña */}
